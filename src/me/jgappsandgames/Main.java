@@ -11,8 +11,8 @@ public class Main {
         OpenLog.init();
 
         // Information
-        Log.i("OpenLog", String.valueOf(2));
-        Log.i("OpenLogTooLong", "0.1.1");
+        Log.i("OpenLog", String.valueOf(Build.build));
+        Log.i("OpenLogTooLong", Build.version);
 
         // Exceptions
         Exception.e("Main", "App is Running");
