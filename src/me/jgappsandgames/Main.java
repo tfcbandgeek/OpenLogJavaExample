@@ -10,9 +10,7 @@ public class Main {
         FileWriter writer = FileWriter.getInstance();
 
         OpenLog.init();
-        Log.writers.add(writer);
-        Exception.writers.add(writer);
-        Error.writers.add(writer);
+        Config.getInstance().setSecondaryWriter(FileWriter.getInstance());
 
         // Information
         Log.i("OpenLog", String.valueOf(Build.build));
