@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="OpenLog_0_2_2">
+  <library name="OpenLog_0_3_1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/OpenLog_0_2_2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/OpenLog_0_3_1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

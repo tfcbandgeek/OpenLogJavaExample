@@ -9,17 +9,41 @@ public class Main {
     public static void main(String[] args) {
         FileWriter writer = FileWriter.getInstance();
 
-        OpenLog.init();
-        Config.getInstance().setSecondaryWriter(FileWriter.getInstance());
+        Config.getInstance()
+                .setSecondaryWriter(FileWriter.getInstance());
 
         // Information
         Log.i("OpenLog", String.valueOf(Build.build));
         Log.i("OpenLogTooLong", Build.version);
 
+        // Logs
+        Log.v("Limited", "Should Only Show On Debug Builds");
+
         // Exceptions
-        Exception.e("Main", "App is Running");
+        Exception.p("Main", "App is Running");
+        Exception.f("Limited", "App is Running");
 
         // Error
+        Error.d("Limited", "Closing?");
+        Error.e("Main", "Closing. . . . .");
+
+        Config.getInstance()
+                .setDebug(false)
+                .setPrefix("NonDebug");
+
+        // Information
+        Log.i("OpenLog", String.valueOf(Build.build));
+        Log.i("OpenLogTooLong", Build.version);
+
+        // Logs
+        Log.v("Limited", "Should Only Show On Debug Builds");
+
+        // Exceptions
+        Exception.p("Main", "App is Running");
+        Exception.f("Limited", "App is Running");
+
+        // Error
+        Error.d("Limited", "Closing?");
         Error.e("Main", "Closing. . . . .");
     }
 }
