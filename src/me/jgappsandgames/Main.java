@@ -45,5 +45,25 @@ public class Main {
         // Error
         Error.d("Limited", "Closing?");
         Error.e("Main", "Closing. . . . .");
+
+        Config.getInstance()
+                .setDebug(true)
+                .setPrefix("Time Stamped")
+                .setTimeStamp(true);
+
+        // Information
+        Log.i("OpenLog", String.valueOf(Build.build));
+        Log.i("OpenLogTooLong", Build.version);
+
+        // Logs
+        Log.v("Limited", "Should Only Show On Debug Builds");
+
+        // Exceptions
+        Exception.p("Main", "App is Running");
+        Exception.f("Limited", "App is Running");
+
+        // Error
+        Error.d("Limited", "Closing?");
+        Error.e("Main", "Closing. . . . .");
     }
 }
