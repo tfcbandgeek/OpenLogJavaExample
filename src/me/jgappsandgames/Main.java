@@ -7,8 +7,11 @@ import me.jgappsandgames.openlog.Exception;
 
 public class Main {
     public static void main(String[] args) {
-        FileWriter writer = FileWriter.getInstance();
+        Timer a = new Timer("All");
+        Timer b = new Timer("Inner");
 
+        a.start();
+        b.start();
         Config.getInstance()
                 .setSecondaryWriter(FileWriter.getInstance());
 
@@ -26,7 +29,9 @@ public class Main {
         // Error
         Error.d("Limited", "Closing?");
         Error.e("Main", "Closing. . . . .");
+        b.finish();
 
+        b.start();
         Config.getInstance()
                 .setDebug(false)
                 .setPrefix("NonDebug");
@@ -45,7 +50,9 @@ public class Main {
         // Error
         Error.d("Limited", "Closing?");
         Error.e("Main", "Closing. . . . .");
+        b.finish();
 
+        b.start();
         Config.getInstance()
                 .setDebug(true)
                 .setPrefix("Time Stamped")
@@ -65,5 +72,7 @@ public class Main {
         // Error
         Error.d("Limited", "Closing?");
         Error.e("Main", "Closing. . . . .");
+        a.finish();
+        b.finish();
     }
 }
