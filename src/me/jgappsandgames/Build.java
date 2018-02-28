@@ -1,6 +1,6 @@
 package me.jgappsandgames;
 
 public class Build {
-    public static final int build = 7;
-    public static final String version = "0.3.1";
+    public static final int build = 8;
+    public static final String version = "1.3.0";
 }
